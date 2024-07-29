@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RATEVISION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background-image-url') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RATEVISION</h1>
+        <p>Write and choose all the necessary informations</p>
+        <form action="/predict" method="post">
+            <label for="ama-exchange-rate">AMA Exchange Rate</label>
+            <input type="text" id="ama-exchange-rate" name="ama_exchange_rate" placeholder="Enter AMA Exchange Rate" required>
+
+            <label for="year">Year</label>
+            <select id="year" name="year" required>
+                <option value="">Click to Open</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <!-- Add more years as needed -->
+            </select>
+
+            <label for="change-in-inventories">Change in inventories</label>
+            <input type="text" id="change-in-inventories" name="change_in_inventories" placeholder="Enter a 10 digit number" required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="">Click to Open</option>
+                <option value="AF">Afghanistan</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AS">American Samoa</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AI">Anguilla</option>
+                <option value="AQ">Antarctica</option>
+                <option value="AG">Antigua and Barbuda</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AW">Aruba</option>
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="AZ">Azerbaijan</option>
+                <option value="BS">Bahamas</option>
+                <option value="BH">Bahrain</option>
+                <option value="BD">Bangladesh</option>
+                <option value="BB">Barbados</option>
+                <option value="BY">Belarus</option>
+                <option value="BE">Belgium</option>
+                <option value="BZ">Belize</option>
+                <option value="BJ">Benin</option>
+                <option value="BM">Bermuda</option>
+                <option value="BT">Bhutan</option>
+                <option value="BO">Bolivia</option>
+                <option value="BA">Bosnia and Herzegovina</option>
+                <option value="BW">Botswana</option>
+                <option value="BV">Bouvet Island</option>
+                <option value="BR">Brazil</option>
+                <option value="IO">British Indian Ocean Territory</option>
+                <option value="BN">Brunei Darussalam</option>
+                <option value="BG">Bulgaria</option>
+                <option value="BF">Burkina Faso</option>
+                <option value="BI">Burundi</option>
+                <option value="KH">Cambodia</option>
+                <option value="CM">Cameroon</option>
+                <option value="CA">Canada</option>
+                <option value="CV">Cape Verde</option>
+                <option value="KY">Cayman Islands</option>
+                <option value="CF">Central African Republic</option>
+                <option value="TD">Chad</option>
+                <option value="CL">Chile</option>
+                <option value="CN">China</option>
+                <option value="CX">Christmas Island</option>
+                <option value="CC">Cocos (Keeling) Islands</option>
+                <option value="CO">Colombia</option>
+                <option value="KM">Comoros</option>
+                <option value="CG">Congo</option>
+                <option value="CD">Congo, the Democratic Republic of the</option>
+                <option value="CK">Cook Islands</option>
+                <option value="CR">Costa Rica</option>
+                <option value="CI">Côte d'Ivoire</option>
+                <option value="HR">Croatia</option>
+                <option value="CU">Cuba</option>
+                <option value="CY">Cyprus</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="DK">Denmark</option>
+                <option value="DJ">Djibouti</option>
+                <option value="DM">Dominica</option>
+                <option value="DO">Dominican Republic</option>
+                <option value="EC">Ecuador</option>
+                <option value="EG">Egypt</option>
+                <option value="SV">El Salvador</option>
+                <option value="GQ">Equatorial Guinea</option>
+                <option value="ER">Eritrea</option>
+                <option value="EE">Estonia</option>
+                <option value="ET">Ethiopia</option>
+                <option value="FK">Falkland Islands (Malvinas)</option>
+                <option value="FO">Faroe Islands</option>
+                <option value="FJ">Fiji</option>
+                <option value="FI">Finland</option>
+                <option value="FR">France</option>
+                <option value="GF">French Guiana</option>
+                <option value="PF">French Polynesia</option>
+                <option value="TF">French Southern Territories</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambia</option>
+                <option value="GE">Georgia</option>
+                <option value="DE">Germany</option>
+                <option value="GH">Ghana</option>
+                <option value="GI">Gibraltar</option>
+                <option value="GR">Greece</option>
+                <option value="GL">Greenland</option>
+                <option value="GD">Grenada</option>
+                <option value="GP">Guadeloupe</option>
+                <option value="GU">Guam</option>
+                <option value="GT">Guatemala</option>
+                <option value="GN">Guinea</option>
+                <option value="GW">Guinea-Bissau</option>
+                <option value="GY">Guyana</option>
+                <option value="HT">Haiti</option>
+                <option value="HM">Heard Island and McDonald Islands</option>
+                <option value="VA">Holy See (Vatican City State)</option>
+                <option value="HN">Honduras</option>
+                <option value="HK">Hong Kong</option>
+                <option value="HU">Hungary</option>
+                <option value="IS">Iceland</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IR">Iran, Islamic Republic of</option>
+                <option value="IQ">Iraq</option>
+                <option value="IE">Ireland</option>
+                <option value="IL">Israel</option>
+                <option value="IT">Italy</option>
+                <option value="JM">Jamaica</option>
+                <option value="JP">Japan</option>
+                <option value="JO">Jordan</option>
+                <option value="KZ">Kazakhstan</option>
+                <option value="KE">Kenya</option>
+                <option value="KI">Kiribati</option>
+                <option value="KP">Korea, Democratic People's Republic of</option>
+                <option value="KR">Korea, Republic of</option>
+                </select>
+                
+    
+                
+    
+                <label for="isic">ISIC A-B</label>
+                <input type="text" id="isic" name="isic_ab" placeholder="Enter ISIC A-B" required>
+    
+                <label for="population">Population</label>
+                <input type="text" id="population" name="population" placeholder="In billion" required>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+    </html>
+    
